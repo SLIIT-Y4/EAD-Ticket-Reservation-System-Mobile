@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/gradient_background">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="5dp"
+        app:cardBackgroundColor="#FFFFFF"
+        android:layout_marginTop="70dp"
+        android:layout_marginLeft="92dp"
+        android:layout_marginRight="32dp">
+
+        <ImageView
+            android:id="@+id/trainImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/train_logo"
+            android:scaleType="centerCrop" />
+
+    </androidx.cardview.widget.CardView>
+
+
+
+    <EditText
+        android:id="@+id/etUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:hint="Enter NIC"
+        android:textColorHint="#A8070730"
+        android:padding="12dp"
+        android:background="@drawable/edittext_background"
+        android:elevation="5dp"
+        />
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etUsername"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:hint="Enter Password"
+        android:textColorHint="#A8070730"
+        android:padding="12dp"
+        android:background="@drawable/edittext_background"
+        android:elevation="5dp"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etPassword"
+        android:layout_marginTop="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:text="Login"
+        android:background="#ff89216c"
+        android:textColor="#ffffff"
+        android:elevation="5dp" />
+
+
+
+    <!-- Registration navigation text -->
+    <TextView
+        android:id="@+id/registerTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnLogin"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Don't have an account? Register"
+        android:textColor="#FFFFFF"/>
+
+</RelativeLayout>

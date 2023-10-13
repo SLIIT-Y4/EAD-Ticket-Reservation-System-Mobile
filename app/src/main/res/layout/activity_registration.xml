@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegistrationActivity"
+    android:padding="16dp"
+    android:background="@drawable/gradient_background">
+
+    <!-- NIC input -->
+    <EditText
+        android:id="@+id/nicEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Enter NIC"
+        android:textColorHint="#A8070730"
+        android:background="@drawable/edittext_background"
+        android:padding="8dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/nameEditText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintVertical_bias="0.2"
+        android:layout_marginTop="100dp"/>
+
+    <!-- Name input -->
+    <EditText
+        android:id="@+id/nameEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Enter Name"
+        android:textColorHint="#A8070730"
+        android:background="@drawable/edittext_background"
+        android:padding="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/nicEditText"
+        app:layout_constraintBottom_toTopOf="@id/emailEditText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Mobile input -->
+    <EditText
+        android:id="@+id/emailEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Enter Mobile No."
+        android:textColorHint="#A8070730"
+        android:background="@drawable/edittext_background"
+        android:padding="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/nameEditText"
+        app:layout_constraintBottom_toTopOf="@id/passwordEditText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Password input -->
+    <EditText
+        android:id="@+id/passwordEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Enter Password"
+        android:textColorHint="#A8070730"
+        android:inputType="textPassword"
+        android:background="@drawable/edittext_background"
+        android:padding="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/emailEditText"
+        app:layout_constraintBottom_toTopOf="@id/confirmPasswordEditText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Confirm Password input -->
+    <EditText
+        android:id="@+id/confirmPasswordEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Confirm Password"
+        android:textColorHint="#A8070730"
+        android:inputType="textPassword"
+        android:background="@drawable/edittext_background"
+        android:padding="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/passwordEditText"
+        app:layout_constraintBottom_toTopOf="@id/registerButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Register button -->
+    <Button
+        android:id="@+id/registerButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:background="#007BFF"
+        android:textColor="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@+id/confirmPasswordEditText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

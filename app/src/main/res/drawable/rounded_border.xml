@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Define the background color (or gradient, if needed) -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#FDFDFD" />
+            <corners android:radius="16dp" />
+        </shape>
+    </item>
+
+    <!-- Define the border properties -->
+    <item android:right="5dp" android:top="2dp" android:left="2dp" android:bottom="2dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#00000000" /> <!-- Transparent color -->
+            <stroke
+                android:width="2dp"
+                android:color="#000000" /> <!-- Border color -->
+            <corners android:radius="16dp" />
+        </shape>
+    </item>
+
+</layer-list>
