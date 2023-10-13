@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AccountManagementActivity"
+    android:background="@drawable/gradient_background"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+
+    <!-- NIC Display -->
+    <TextView
+        android:id="@+id/bookingId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Booking ID : 021456"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/reservationDate"
+        android:background="?android:attr/editTextBackground"
+        android:padding="10dp"
+        android:layout_marginTop="20dp"
+        tools:ignore="MissingConstraints"/>
+
+
+    <TextView
+        android:id="@+id/reservationDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Recivation Date: 04/07/2023"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/bookingId"
+        android:background="?android:attr/editTextBackground"
+        android:padding="10dp"
+        android:layout_marginTop="20dp"
+        tools:ignore="MissingConstraints"/>
+    <TextView
+        android:id="@+id/createDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Date: 01/07/2023"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/reservationDate"
+        android:background="?android:attr/editTextBackground"
+        android:padding="10dp"
+        android:layout_marginTop="20dp"
+        tools:ignore="MissingConstraints"/>
+    <TextView
+        android:id="@+id/trainName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Train: Galu Kumari"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/createDate"
+        android:background="?android:attr/editTextBackground"
+        android:padding="10dp"
+        android:layout_marginTop="20dp"
+        tools:ignore="MissingConstraints"/>
+    <TextView
+        android:id="@+id/scheduleId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Shedule ID: 0145"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/trainName"
+        android:background="?android:attr/editTextBackground"
+        android:padding="10dp"
+        android:layout_marginTop="20dp"
+        tools:ignore="MissingConstraints"/>
+
+    <!-- Edit Profile Button -->
+    <Button
+        android:id="@+id/editProfileButton1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Edit Booking"
+        app:layout_constraintTop_toBottomOf="@+id/scheduleId"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"/>
+
+    <Button
+        android:id="@+id/deleteProfileButton1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Delete Booking"
+        app:layout_constraintTop_toBottomOf="@+id/editProfileButton1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="@color/red"/>
+
+
+
+    <!-- Deactivate Account Button -->
+    <!--    <Button-->
+    <!--        android:id="@+id/deactivateButton"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="Deactivate Account"-->
+    <!--        android:backgroundTint="@color/red"  &lt;!&ndash; Optional: to make it clear it's a serious action &ndash;&gt;-->
+    <!--    app:layout_constraintTop_toBottomOf="@+id/editProfileButton"-->
+    <!--    app:layout_constraintStart_toStartOf="parent"-->
+    <!--    app:layout_constraintEnd_toEndOf="parent"-->
+    <!--    android:layout_marginTop="16dp"-->
+    <!--    android:layout_marginStart="32dp"-->
+    <!--    android:layout_marginEnd="32dp"/>-->
+</androidx.constraintlayout.widget.ConstraintLayout>

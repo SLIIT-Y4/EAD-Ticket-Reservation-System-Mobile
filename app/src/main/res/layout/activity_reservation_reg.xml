@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:background="@drawable/gradient_background">
+
+
+    <!-- Train ID Label -->
+    <TextView
+        android:id="@+id/startLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Start"
+        android:gravity="end"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/startSpinner"
+        android:layout_marginTop="24dp"
+        android:layout_marginLeft="-100dp"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@color/white"/>
+
+    <!-- Train ID Spinner -->
+    <Spinner
+        android:id="@+id/startSpinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/editbox_background"
+        app:layout_constraintTop_toTopOf="@+id/startLabel"
+        app:layout_constraintStart_toEndOf="@+id/startLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="36dp"/>
+
+    <!-- Schedule ID Label -->
+    <TextView
+        android:id="@+id/endLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="End"
+        android:gravity="end"
+        app:layout_constraintTop_toBottomOf="@+id/startSpinner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/endSpinner"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="-100dp"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@color/white"/>
+
+    <!-- Schedule ID Spinner -->
+    <Spinner
+        android:id="@+id/endSpinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/editbox_background"
+        app:layout_constraintTop_toTopOf="@+id/endLabel"
+        app:layout_constraintStart_toEndOf="@+id/endLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="36dp"/>
+
+
+    <!-- Date Label -->
+    <TextView
+        android:id="@+id/dateLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Date"
+        android:gravity="end"
+        app:layout_constraintTop_toBottomOf="@+id/endSpinner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/dateEditText"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="-100dp"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@color/white"/>
+
+    <!-- Date EditText -->
+    <EditText
+        android:id="@+id/dateEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Select Date"
+        android:focusable="false"
+        android:background="@android:drawable/editbox_background"
+        app:layout_constraintTop_toTopOf="@+id/dateLabel"
+        app:layout_constraintStart_toEndOf="@+id/dateLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="36dp"/>
+
+    <TextView
+        android:id="@+id/TrainLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Train"
+        android:gravity="end"
+        app:layout_constraintTop_toBottomOf="@+id/dateEditText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/TrainSpinner"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="-100dp"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@color/white"/>
+
+    <!-- Class Spinner -->
+    <Spinner
+        android:id="@+id/TrainSpinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/editbox_background"
+        app:layout_constraintTop_toTopOf="@+id/TrainLabel"
+        app:layout_constraintStart_toEndOf="@+id/TrainLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="36dp"/>
+
+    <TextView
+        android:id="@+id/classLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Class"
+        android:gravity="end"
+        app:layout_constraintTop_toBottomOf="@+id/TrainSpinner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/classSpinner"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="-100dp"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@color/white"/>
+
+    <!-- Class Spinner -->
+    <Spinner
+        android:id="@+id/classSpinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/editbox_background"
+        app:layout_constraintTop_toTopOf="@+id/classLabel"
+        app:layout_constraintStart_toEndOf="@+id/classLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="36dp"/>
+
+    <!-- Seat Count Label -->
+    <TextView
+        android:id="@+id/seatCountLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Seat Count"
+        android:gravity="end"
+        app:layout_constraintTop_toBottomOf="@+id/classSpinner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/seatCountPicker"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="-100dp"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@color/white"/>
+
+    <!-- Seat Count NumberPicker -->
+    <NumberPicker
+        android:id="@+id/seatCountPicker"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/editbox_background"
+        app:layout_constraintTop_toTopOf="@+id/seatCountLabel"
+        app:layout_constraintStart_toEndOf="@+id/seatCountLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="36dp"/>
+
+
+    <!-- Class Label -->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

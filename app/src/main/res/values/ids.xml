@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="trainIDSpinner" type="id"/>
+    <item name="scheduleIDSpinner" type="id"/>
+    <item name="classSpinner" type="id"/>
+    <item name="seatCountPicker" type="id"/>
+    <item name="dateEditText" type="id"/>
+    <item name="addReservationButton" type="id"/>
+</resources>
