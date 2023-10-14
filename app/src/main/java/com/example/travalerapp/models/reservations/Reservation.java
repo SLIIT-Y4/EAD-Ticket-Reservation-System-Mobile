@@ -1,6 +1,8 @@
 package com.example.travalerapp.models.reservations;
 
+import java.util.Date;
+
 public class Reservation {
-    public String ReservationDate;
+    public Date ReservationDate;
     // ... any other attributes
 }

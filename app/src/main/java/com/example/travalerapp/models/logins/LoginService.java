@@ -5,6 +5,7 @@ import com.example.travalerapp.models.registers.SignupRequestBody;
 import com.example.travalerapp.models.registers.SignupResponse;
 import com.example.travalerapp.models.reservations.Reservation;
 
+import java.util.Date;
 import java.util.List;
 
 import retrofit2.http.Query;
@@ -24,5 +25,5 @@ public interface LoginService {
     Call<SignupResponse> signup(@Body SignupRequestBody requestBody);
 
     @GET("api/Reservations/UpcomingReservation")
-    Call<List<Reservation>> getReservationsByNicAndDate(@Query("nic") String nic, @Query("date") String date);
+    Call<List<Reservation>> getReservationsByNicAndDate(@Query("nic") String nic, @Query("date") Date date);
 }
