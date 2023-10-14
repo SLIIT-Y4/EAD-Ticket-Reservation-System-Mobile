@@ -13,7 +13,7 @@ public class NetworkManager {
     private static NetworkManager singleton;
 
     private Retrofit retrofit;
-    private final String baseUrl = "http://10.0.2.2:5000/api/Logins/";
+    private final String baseUrl = "http://10.0.2.2:5000/api/";
     private ConnectivityManager connectivityManager;
 
     public static NetworkManager getInstance(){

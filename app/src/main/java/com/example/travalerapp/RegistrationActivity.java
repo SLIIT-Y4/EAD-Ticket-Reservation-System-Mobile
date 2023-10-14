@@ -8,22 +8,18 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.travalerapp.models.logins.LoginRequestBody;
-import com.example.travalerapp.models.logins.LoginService;
+import com.example.travalerapp.managers.RegisterManager;
+import com.example.travalerapp.managers.SignupManager;
 import com.example.travalerapp.models.registers.RegisterRequestBody;
 import com.example.travalerapp.models.registers.RegisterResponse;
+import com.example.travalerapp.models.registers.SignupResponse;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
+import java.util.function.Consumer;
 
 public class RegistrationActivity extends AppCompatActivity {
 
     private EditText nicEditText, nameEditText, emailEditText, passwordEditText, confirmPasswordEditText;
     private Button registerButton;
-    private LoginService loginService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,17 +33,11 @@ public class RegistrationActivity extends AppCompatActivity {
         confirmPasswordEditText = findViewById(R.id.confirmPasswordEditText);
         registerButton = findViewById(R.id.registerButton);
 
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://10.0.2.2:5000/api/Logins/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        loginService = retrofit.create(LoginService.class);
-
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 registerUser();
+                signupUser();
             }
         });
     }
@@ -61,21 +51,34 @@ public class RegistrationActivity extends AppCompatActivity {
 
         RegisterRequestBody requestBody = new RegisterRequestBody(nic, name, email, password, confirmPassword);
 
-        loginService.register(requestBody).enqueue(new Callback<RegisterResponse>() {
+        RegisterManager.getInstance().register(nic, name, email, password, confirmPassword, new Consumer<RegisterResponse>() {
             @Override
-            public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
-                if (response.isSuccessful()) {
-                    // Handle success
-                    Toast.makeText(RegistrationActivity.this, "Registration Successful!", Toast.LENGTH_SHORT).show();
-                } else {
-                    // Handle failure or errors
-                    Toast.makeText(RegistrationActivity.this, "Registration Failed!", Toast.LENGTH_SHORT).show();
-                }
+            public void accept(RegisterResponse registerResponse) {
+                Toast.makeText(RegistrationActivity.this, "Registration Successful!", Toast.LENGTH_SHORT).show();
+                // Maybe start another activity or perform some action?
             }
-
+        }, new Consumer<String>() {
             @Override
-            public void onFailure(Call<RegisterResponse> call, Throwable t) {
-                Toast.makeText(RegistrationActivity.this, "Error connecting to server", Toast.LENGTH_SHORT).show();
+            public void accept(String error) {
+                Toast.makeText(RegistrationActivity.this, error, Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void signupUser() {
+        String nic = nicEditText.getText().toString();
+        String password = passwordEditText.getText().toString();
+
+        SignupManager.getInstance().signup(nic, password, new Consumer<SignupResponse>() {
+            @Override
+            public void accept(SignupResponse signupResponse) {
+                Toast.makeText(RegistrationActivity.this, "Signup Successful!", Toast.LENGTH_SHORT).show();
+                // Maybe start another activity or perform some action?
+            }
+        }, new Consumer<String>() {
+            @Override
+            public void accept(String error) {
+                Toast.makeText(RegistrationActivity.this, error, Toast.LENGTH_SHORT).show();
             }
         });
     }

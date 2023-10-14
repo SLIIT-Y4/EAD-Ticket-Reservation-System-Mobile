@@ -2,7 +2,9 @@ package com.example.travalerapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.SpannableString;
@@ -26,6 +28,7 @@ public class LoginActivity extends AppCompatActivity {
     private LoginManager loginManager;
     private EditText etUserName, etPassword;
     private Button btnLogin;
+    private String nic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,6 +89,13 @@ public class LoginActivity extends AppCompatActivity {
                     Intent intent = new Intent(LoginActivity.this, AccountManagementActivity.class);
                     intent.putExtra("loginResponse", loginResponse);
                     startActivity(intent);
+
+//                    SharedPreferences sharedPref = getSharedPreferences("user_data", Context.MODE_PRIVATE);
+//                    SharedPreferences.Editor editor = sharedPref.edit();
+//
+//                    editor.putString("user_nic", nic);  // Assuming `nic` is the variable where you have user's NIC.
+//                    editor.apply();
+
                 },
                 error -> {
                     // Handle login errors here.

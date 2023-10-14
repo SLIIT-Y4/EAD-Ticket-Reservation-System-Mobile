@@ -48,13 +48,13 @@ public class historyActivity extends AppCompatActivity {
                         startActivity(intent);
                     }
                     break;
-//                case R.id.navigation_profile:
-//                    if (!this.getClass().equals(AccountManagementActivity.class)) {
-//                        intent = new Intent(this, AccountManagementActivity.class);
-//                        intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-//                        startActivity(intent);
-//                    }
-//                    break;
+                case R.id.navigation_profile:
+                    if (!this.getClass().equals(AccountManagementActivity.class)) {
+                        intent = new Intent(this, AccountManagementActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                        startActivity(intent);
+                    }
+                    break;
             }
             return true;
         });

@@ -7,6 +7,7 @@ public class RegisterRequestBody {
     public String password;
     public String confirmPassword;
     public String UserRole;
+    public String AccountStatus;
 
     public RegisterRequestBody(String nic, String name, String email, String password, String confirmPassword) {
         this.nic = nic;
@@ -15,5 +16,6 @@ public class RegisterRequestBody {
         this.password = password;
         this.confirmPassword = confirmPassword;
         this.UserRole = "Traveler"; // This is hardcoded as per your requirement
+        this.AccountStatus = "Active";
     }
 }

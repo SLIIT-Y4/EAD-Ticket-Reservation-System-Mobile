@@ -1,5 +1,6 @@
 package com.example.travalerapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -7,6 +8,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.travalerapp.models.logins.LoginResponse;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class AccountManagementActivity extends AppCompatActivity {
 
@@ -30,6 +32,36 @@ public class AccountManagementActivity extends AppCompatActivity {
         if (loginResponse != null) {
             displayUserData(loginResponse);
         }
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
+            Intent intent;
+
+            switch (item.getItemId()) {
+                case R.id.navigation_reservation:
+                    if (!this.getClass().equals(reservationActivity.class)) {
+                        intent = new Intent(this, reservationActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                        startActivity(intent);
+                    }
+                    break;
+                case R.id.navigation_history:
+                    if (!this.getClass().equals(historyActivity.class)) {
+                        intent = new Intent(this, historyActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                        startActivity(intent);
+                    }
+                    break;
+                case R.id.navigation_profile:
+                    if (!this.getClass().equals(AccountManagementActivity.class)) {
+                        intent = new Intent(this, AccountManagementActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                        startActivity(intent);
+                    }
+                    break;
+            }
+            return true;
+        });
     }
 
     private void displayUserData(LoginResponse loginResponse) {
