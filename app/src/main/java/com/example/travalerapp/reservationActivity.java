@@ -109,6 +109,7 @@ public class reservationActivity extends AppCompatActivity {
                         // For demonstration purposes, I'm just logging the dates.
                         Log.d("Reservation Date", reservation.ReservationDate);
                     }
+
                 } else {
                     Toast.makeText(reservationActivity.this, "Failed to fetch reservations", Toast.LENGTH_SHORT).show();
                 }
