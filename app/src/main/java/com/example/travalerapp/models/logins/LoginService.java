@@ -23,6 +23,6 @@ public interface LoginService {
     @POST("Logins/signup")
     Call<SignupResponse> signup(@Body SignupRequestBody requestBody);
 
-    @GET("/api/Reservations/")
+    @GET("api/Reservations/UpcomingReservation")
     Call<List<Reservation>> getReservationsByNicAndDate(@Query("nic") String nic, @Query("date") String date);
 }

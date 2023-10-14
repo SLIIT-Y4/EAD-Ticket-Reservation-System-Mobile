@@ -57,7 +57,7 @@ public class reservationActivity extends AppCompatActivity {
         });
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
-        bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
+        bottomNavigationView.setOnItemSelectedListener(item -> {
             Intent intent;
 
             switch (item.getItemId()) {
@@ -87,15 +87,15 @@ public class reservationActivity extends AppCompatActivity {
         });
 
 
-        // Initialize Retrofit
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://10.0.2.2:5000/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        LoginService LoginService = retrofit.create(com.example.travalerapp.models.logins.LoginService.class);
-
-        fetchReservations(userNic, currentDate);
+//        // Initialize Retrofit
+//        Retrofit retrofit = new Retrofit.Builder()
+//                .baseUrl("http://10.0.2.2:5000/")
+//                .addConverterFactory(GsonConverterFactory.create())
+//                .build();
+//
+//        LoginService LoginService = retrofit.create(com.example.travalerapp.models.logins.LoginService.class);
+//
+//        fetchReservations(userNic, currentDate);
     }
     private void fetchReservations(String nic, String date) {
         loginService.getReservationsByNicAndDate(nic, date).enqueue(new Callback<List<Reservation>>() {
